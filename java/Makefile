@@ -169,7 +169,7 @@ endif
 # and -AsuggestPureMethods are fixed, they can be run on plume-lib and Daikon and this
 # can be removed. This warning is issued by the Lock Checker when a method calls another
 # method with a weaker side effect guarantee.
-JAVACHECK_ARGS ?= -source 7 -target 7 -Xlint:-options -Awarns -implicit:class -Xlint:-processing -AcheckPurityAnnotations -AsuppressWarnings=lock:method.guarantee.violated -AprintErrorStack -Astubs=${CHECKERFRAMEWORK}/checker/resources/javadoc.astub -Anolocations -Aannotations -processor org.checkerframework.common.util.count.AnnotationStatistics
+JAVACHECK_ARGS ?= -source 7 -target 7 -Xlint:-options -Awarns -implicit:class -Xlint:-processing -AcheckPurityAnnotations -AsuppressWarnings=lock:method.guarantee.violated -AprintErrorStack -Astubs=${CHECKERFRAMEWORK}/checker/resources/javadoc.astub -proc:only -processor org.checkerframework.common.util.count.JavaCodeStatistics
 
 ## For testing a single checker, replace the above by:
 # JAVACHECK_ARGS ?= -source 7 -target 7 -Xlint:-options -Awarns -implicit:class -Xlint:-processing -AcheckPurityAnnotations -AprintErrorStack -processor org.checkerframework.checker.regex.RegexChecker
